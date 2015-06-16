@@ -14,8 +14,9 @@ use App\Article;
 */
 
 Route::get('/', [ 'as' => 'index', function () {
+    $articles = Article::orderBy('created_at', 'desc')->paginate(4);
     return view('pages.index')
-        ->with([ 'newsArticles' => Article::paginate(4) ]);
+        ->with([ 'newsArticles' => $articles ]);
 }]);
 
 Route::get('/about', [ 'as' => 'about', function () {
