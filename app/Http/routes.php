@@ -32,10 +32,7 @@ Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
 });
 
 Route::group([ 'prefix' => '/api', 'as' => 'api/' ], function () {
-    Route::any('/cloudmailin/{key}', [ 'as' => 'cloudmailin', function (Request $request, $key) {
-        if (config('api.cloudmailin') !== $key) {
-            throw new NotFoundHttpException;
-        }
+    Route::any("/cloudmailin/". config('api.cloudmailin'), [ 'as' => 'cloudmailin', function (Request $request) {
         Log::info(print_r($request->all(), true));
         return response('');
     }]);
