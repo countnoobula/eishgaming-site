@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
+use Illuminate\Contracts\Encryption\Encrypter;
 
 class VerifyCsrfToken extends BaseVerifier
 {
@@ -14,4 +15,9 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         //
     ];
+
+    public function __construct(Encrypter $encrypter) {
+        parent::__construct($encrypter);
+        $this->except[] = route('api/cloudmailin');
+    }
 }
