@@ -1,6 +1,7 @@
 <?php
 
 use App\Article;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,12 @@ Route::get('/about', [ 'as' => 'about', function () {
 Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
     Route::get('/', [ 'as' => 'landing', function () {
         return view('pages.feed.landing');
+    }]);
+});
+
+Route::group([ 'prefix' => '/api', 'as' => 'api/' ], function () {
+    Route::get("/cloudmailin/".  config('api.cloudmailin'), [ 'as' => 'cloudmailin', function (Request $request) {
+        Log::info(print_r($request->all(), true));
+        return response('');
     }]);
 });
