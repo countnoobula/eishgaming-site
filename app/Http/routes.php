@@ -31,7 +31,7 @@ Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
 });
 
 Route::group([ 'prefix' => '/api', 'as' => 'api/' ], function () {
-    Route::get("/cloudmailin/".  config('api.cloudmailin'), [ 'as' => 'cloudmailin', function (Request $request) {
+    Route::any("/cloudmailin/".  config('api.cloudmailin'), [ 'as' => 'cloudmailin', function (Request $request) {
         Log::info(print_r($request->all(), true));
         return response('');
     }]);
