@@ -2,6 +2,7 @@
 
 use App\Article;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,10 @@ Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
 });
 
 Route::group([ 'prefix' => '/api', 'as' => 'api/' ], function () {
-    Route::any("/cloudmailin/".  config('api.cloudmailin'), [ 'as' => 'cloudmailin', function (Request $request) {
+    Route::any('/cloudmailin/{key}', [ 'as' => 'cloudmailin', function (Request $request, $key) {
+        if (config('api.cloudmailin') !== $key) {
+            throw new NotFoundHttpException;
+        }
         Log::info(print_r($request->all(), true));
         return response('');
     }]);
