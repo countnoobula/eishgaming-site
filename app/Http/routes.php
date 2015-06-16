@@ -1,5 +1,7 @@
 <?php
 
+use App\Article;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,7 +15,7 @@
 
 Route::get('/', [ 'as' => 'index', function () {
     return view('pages.index')
-        ->with([ 'newsArticles' => [ ] ]);
+        ->with([ 'newsArticles' => Article::paginate(4) ]);
 }]);
 
 Route::get('/about', [ 'as' => 'about', function () {

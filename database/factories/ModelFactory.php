@@ -19,3 +19,13 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Article::class, function ($faker) {
+    $date = $faker->dateTime();
+    return [
+        'title' => str_limit($faker->text, 25),
+        'content' => $faker->text,
+        'created_at' => $date,
+        'updated_at' => $date,
+    ];
+});

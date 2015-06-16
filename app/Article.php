@@ -8,6 +8,6 @@ class Article extends BaseModel
      *
      * @var array
      */
-    protected $fillable = ['title', 'content', 'poster'];
+    protected $fillable = ['title', 'content', 'created_at', 'updated_at'];
 
 }
