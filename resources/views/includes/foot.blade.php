@@ -9,3 +9,11 @@
 
 <!-- Ajaxify -->
 <script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
+
+<!-- Timeago.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.3/jquery.timeago.min.js"></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery(".timeago").timeago();
+});
+</script>
