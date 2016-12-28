@@ -15,8 +15,14 @@ Route::get('/', 'PageController@index');
 
 Route::get('/about', 'PageController@about');
 
-Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
+Route::group([ 'prefix' => '/feed', ], function () {
     Route::get('/', 'PageController@feed');
 });
 
-
+Route::group([ 'prefix' => '/auth', 'namespace' => 'Auth', ], function () {
+    Route::get('/login', 'AuthController@getLogin');
+    Route::post('/login', 'AuthController@postLogin');
+    Route::get('/logout', 'AuthController@getLogout');
+    Route::get('/register', 'Auth\AuthController@getRegister');
+    Route::post('/register', 'Auth\AuthController@postRegister');
+});
