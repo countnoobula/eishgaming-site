@@ -1,3 +1,5 @@
+
+@unless (Request::ajax())
 <!-- jQuery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -13,7 +15,8 @@
 <!-- Timeago.js -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.3/jquery.timeago.min.js"></script>
 <script>
-jQuery(document).ready(function() {
-  jQuery(".timeago").timeago();
-});
+$(function() {
+    jQuery(".timeago").timeago();
+})
 </script>
+@endunless
