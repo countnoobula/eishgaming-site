@@ -1,7 +1,3 @@
-{{-- Only yield content if ajax is requested --}}
-@if (Request::ajax())
-    @yield('content')
-@else
 <!doctype html>
 <html class="l-html" lang="en">
     <head>
@@ -22,4 +18,3 @@
         @include('includes.foot')
     </body>
 </html>
-@endif
