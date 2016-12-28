@@ -1,9 +1,5 @@
 <?php
 
-use App\Article;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,18 +11,12 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 |
 */
 
-Route::get('/', [ 'as' => 'index', function () {
-    $articles = Article::orderBy('created_at', 'desc')->paginate(4);
-    return view('pages.index')
-        ->with([ 'newsArticles' => $articles ]);
-}]);
+Route::get('/', 'PageController@index');
 
-Route::get('/about', [ 'as' => 'about', function () {
-    return view('pages.about');
-}]);
+Route::get('/about', 'PageController@about');
 
 Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
-    Route::get('/', [ 'as' => 'landing', function () {
-        return view('pages.feed.landing');
-    }]);
+    Route::get('/', 'PageController@feed');
 });
+
+
