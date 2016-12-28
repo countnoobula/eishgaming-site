@@ -3,8 +3,10 @@
     <ul>
         <li><a href="{{ action('PageController@about') }}" class="main-click">About</a></li>
         <li><a href="{{ action('PageController@feed') }}" class="main-click">Group Feed</a></li>
-        @unless(auth()->check())
+        @if(auth()->check())
+        <li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
+        @else
         <li><a href="#" onclick="alert('Login with Facebook is currently disabled, this feature will reactivate soon')"><img id="facebook-login" class="pure-img" style="cursor:pointer" src="/images/login-with-facebook.png"></a></li>
-        @endunless
+        @endif
     </ul>
 </div>
