@@ -30,10 +30,3 @@ Route::group([ 'prefix' => '/feed', 'as' => 'feed/' ], function () {
         return view('pages.feed.landing');
     }]);
 });
-
-Route::group([ 'prefix' => '/api', 'as' => 'api/' ], function () {
-    Route::any("/cloudmailin/". config('api.cloudmailin'), [ 'as' => 'cloudmailin', function (Request $request) {
-        Log::info(print_r($request->all(), true));
-        return response('');
-    }]);
-});
