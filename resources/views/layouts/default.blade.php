@@ -1,5 +1,13 @@
+@if (Request::ajax())
+    <section id="content" data-uri="{{{ Request::path() == "/" ? "/" : "/" . Request::path() }}}" style="display: none;">
+        <div class="document-title" style="display:none;">EGN - @yield('title')</div>
+        
+        @yield('content')
+    </section>
+@else
 <!doctype html>
 <html class="l-html" lang="en">
+    
     <head>
         @include('includes.head')
     </head>
@@ -11,10 +19,11 @@
         
         @include('includes.header')
 
-        <div id="innterContent">
+        <section id="content" class="content" data-uri="{{{ Request::path() == "/" ? "/" : "/" . Request::path() }}}">
             @yield('content')
-        </div>
+        </section>>
 
         @include('includes.foot')
     </body>
 </html>
+@endif

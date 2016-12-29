@@ -1,5 +1,4 @@
 
-@unless (Request::ajax())
 <!-- jQuery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -19,4 +18,3 @@ $(function() {
     jQuery(".timeago").timeago();
 })
 </script>
-@endunless
