@@ -29,4 +29,6 @@ Route::group([ 'prefix' => '/auth', 'namespace' => 'Auth', ], function () {
 
 Route::group([ 'prefix' => '/profile', ], function () {
     Route::get('/', 'ProfileController@index');
+    Route::get('/edit', 'ProfileController@getEdit');
+    Route::post('/edit', 'ProfileController@postEdit');
 });

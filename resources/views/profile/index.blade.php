@@ -41,7 +41,7 @@ My Profile
                 </tr>
             </tbody>
         </table>
-        <p><a href="#">Edit Profile</a></p>
+        <p><a href="{{ action('ProfileController@getEdit') }}">Edit Profile</a></p>
     </div>
     <div class="pure-u-1-2 egn-standard-text-block">
         <h3>Games</h3>

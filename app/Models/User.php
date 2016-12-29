@@ -53,7 +53,7 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
             
             public function getDisplayName(): string
             {
-                if (!is_null($this->user->display_name)) {
+                if (!empty(trim("{$this->user->display_name}"))) {
                     return $this->user->display_name;
                 }
                 return $this->user->name;
