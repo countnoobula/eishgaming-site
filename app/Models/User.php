@@ -6,6 +6,7 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use App\Interfaces\Profile;
 
 class User extends BaseModel implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -31,4 +32,26 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+    
+    public function getProfile(): Profile
+    {
+        return new class($this) implements Profile {
+            private $user;
+            
+            public function __construct(User $user)
+            {
+                $this->user = $user;
+            }
+            
+            public function getDisplayName(): string
+            {
+                return $this->user->name;
+            }
+
+            public function getTag(): string
+            {
+                return 'E G N';
+            }
+        };
+    }
 }
