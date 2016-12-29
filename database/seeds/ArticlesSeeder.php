@@ -11,6 +11,6 @@ class ArticlesSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Article', 4)->create();
+        factory('App\Models\Article', 4)->create();
     }
 }

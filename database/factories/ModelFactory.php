@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function ($faker) {
+$factory->define(App\Models\User::class, function ($faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -20,7 +20,7 @@ $factory->define(App\User::class, function ($faker) {
     ];
 });
 
-$factory->define(App\Article::class, function ($faker) {
+$factory->define(App\Models\Article::class, function ($faker) {
     $date = $faker->dateTime();
     return [
         'title' => str_limit($faker->text, 25),
