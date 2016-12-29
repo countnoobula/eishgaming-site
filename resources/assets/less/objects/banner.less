@@ -1,0 +1,42 @@
+/* 
+    Created on : Dec 29, 2016, 3:40:59 PM
+    Author     : rory
+*/
+
+.egn-banner {
+    position: relative;
+    background: transparent url('@{base-url}images/wave.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 22.5em;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: scroll;
+    
+    .egn-banner-content {
+        position: absolute;
+        left:0px;
+        bottom: 0px;
+        width: 100%;
+        
+        .egn-tag {
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.65);
+            color:#fff;
+            float: left;
+            font-size: 2.4em;
+            padding: 0.2em;
+            width: 4.5em;
+            text-align: right;
+            margin-right: 0.3em;
+        }
+        
+        .egn-primary {
+            overflow: hidden;
+            background-image: linear-gradient(90deg, rgba(0,0,0,0.65), rgba(0,0,0,0));
+            color:#fff;
+            padding: 0.2em;
+            font-size: 2.4em;
+        }
+    }
+}
+

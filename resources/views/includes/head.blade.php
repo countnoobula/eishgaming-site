@@ -4,18 +4,18 @@
 <meta name="author" content="Rory van Heerden">
 <meta name="description" content="Eish Gaming Network">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/css/pure-min.css">
-<link rel="stylesheet" href="/css/base-min.css">
+<link rel="stylesheet" href="{{ url('/css/pure-min.css') }}">
+<link rel="stylesheet" href="{{ url('/css/base-min.css') }}">
 <!--[if lte IE 8]>
-    <link rel="stylesheet" href="/css/grids-responsive-old-ie-min.css">
+    <link rel="stylesheet" href="{{ url('/css/grids-responsive-old-ie-min.css') }}">
 <![endif]-->
 <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="/css/grids-responsive-min.css">
+    <link rel="stylesheet" href="{{ url('/css/grids-responsive-min.css') }}">
 <!--<![endif]-->
-<link rel="stylesheet" href="/fonts/liberation_sans.css">
-<link rel="stylesheet" href="/fonts/bebas_neue.css">
-<link rel="stylesheet" href="/css/main.css">
-<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="{{ url('/fonts/liberation_sans.css') }}">
+<link rel="stylesheet" href="{{ url('/fonts/bebas_neue.css') }}">
+<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ url('/images/favicon.ico') }}">
 <style>
 /*
 Scollbar for webkit browsers
