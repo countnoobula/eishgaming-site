@@ -25,7 +25,11 @@ My Profile
                 </tr>
                 <tr>
                     <td>Age</td>
+                    @if ($profile->getBirthday()->diffInYears() > 0)
                     <td>{{ $profile->getBirthday()->diffInYears() }} Years old</td>
+                    @else
+                    <td class="egn-highlight">(not set)</td>
+                    @endif
                 </tr>
                 <tr>
                     <td>Email</td>

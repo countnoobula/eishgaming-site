@@ -25,7 +25,7 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password', 'display_name', 'birthday', 'phone',];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -34,6 +34,13 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      */
     protected $hidden = ['password', 'remember_token'];
     
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'birthday',
+    ];
+
     public function getProfile(): Profile
     {
         return new class($this) implements Profile {
@@ -59,7 +66,11 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
 
             public function getBirthday(): Carbon
             {
-                return Carbon::createFromDate(1994, 10, 6);
+                if (is_null($this->user->birthday)) {
+                    return Carbon::now();
+                }
+                
+                return $this->user->birthday;
             }
 
             public function getEmail(): string
