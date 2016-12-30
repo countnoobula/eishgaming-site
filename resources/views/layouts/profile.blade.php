@@ -6,8 +6,7 @@
     <div class="pure-u-1">
         <div class="egn-banner">
             <div class="egn-banner-content">
-                <div class="egn-tag">[ {{ $profile->getTag() }} ]</div>
-                <div class="egn-primary">{{ $profile->getDisplayName() }}</div>
+                <div class="egn-banner-inner">{{ $profile->getDisplayName() }}</div>
             </div>
         </div>
     </div>

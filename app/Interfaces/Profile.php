@@ -8,7 +8,6 @@ use Traversable;
 interface Profile
 {
     public function getDisplayName(): string;
-    public function getTag(): string;
     public function getEmail(): string;
     public function getBirthday(): Carbon;
     public function getName(): string;

@@ -60,11 +60,6 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
                 return $this->user->name;
             }
 
-            public function getTag(): string
-            {
-                return 'E G N';
-            }
-
             public function getBirthday(): Carbon
             {
                 if (is_null($this->user->birthday)) {
