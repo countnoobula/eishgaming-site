@@ -5,9 +5,8 @@ namespace App\Interfaces;
 use Carbon\Carbon;
 use Traversable;
 
-interface Profile
+interface Profile extends Banner
 {
-    public function getDisplayName(): string;
     public function getEmail(): string;
     public function getBirthday(): Carbon;
     public function getName(): string;

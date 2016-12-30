@@ -12,6 +12,6 @@
     </div>
 </div>
 
-@yield('profile_content')
+@yield('inner_content')
 
 @stop

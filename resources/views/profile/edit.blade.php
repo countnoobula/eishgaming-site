@@ -1,11 +1,11 @@
 
-@extends('layouts.profile')
+@extends('layouts.banner')
 
 @section('title')
 Edit Profile
 @stop
 
-@section('profile_content')
+@section('inner_content')
 <div class="pure-g standard">
     <div class="pure-u-md-1-2 pure-u-sm-1 egn-standard-text-block">
         <h1>Edit Profile</h1>

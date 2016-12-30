@@ -1,10 +1,10 @@
-@extends('layouts.profile')
+@extends('layouts.banner')
 
 @section('title')
 My Profile
 @stop
 
-@section('profile_content')
+@section('inner_content')
 
 <div class="standard">
     <div class="pure-g">
