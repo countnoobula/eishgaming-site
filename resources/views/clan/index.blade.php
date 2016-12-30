@@ -10,8 +10,6 @@ My Profile
     <div class="pure-g">
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
             <h3>Clans</h3>
-            
-            @foreach ($profile->getClans() as $clan)
             <div class="pure-g">
                 <div class="pure-u-xl-5-6 pure-u-1-1">
                     <div class="egn-clan">
@@ -19,15 +17,14 @@ My Profile
                             <img src="{{ url('/images/peak-100x100.png') }}" alt="clan_avatar">
                         </div>
                         <div class="egn-wrapper">
-                            <div class="egn-title">{{ $clan->name }}</div>
-                            <div class="egn-role">{{ ucfirst($clan->pivot->role) }}</div>
+                            <div class="egn-title">Test Clan</div>
+                            <div class="egn-role">Memeber</div>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
-    
-            <p><a href="{{ action('ClanController@getCreate') }}">New Clan</a></p>
+            
+            <p><a href="{{ action('ProfileController@getEdit') }}">New Clan</a></p>
         </div>
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
             <h3>Games</h3>

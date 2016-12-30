@@ -3,6 +3,7 @@
 namespace App\Interfaces;
 
 use Carbon\Carbon;
+use Traversable;
 
 interface Profile
 {
@@ -13,4 +14,5 @@ interface Profile
     public function getName(): string;
     public function getPhoneNumber(): string;
     public function getStatusLabel(): string;
+    public function getClans(): Traversable;
 }

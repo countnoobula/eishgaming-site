@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use App\Interfaces\Profile;
 use Carbon\Carbon;
+use Traversable;
 
 class User extends BaseModel implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -92,6 +93,16 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
             {
                 return 'Unverified User';
             }
+            
+            public function getClans(): Traversable
+            {
+                return $this->user->clans;
+            }
         };
+    }
+    
+    public function clans()
+    {
+        return $this->belongsToMany(Clan::class)->withPivot('role')->withTimestamps();
     }
 }
