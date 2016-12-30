@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="{{ url('/fonts/liberation_sans.css') }}">
 <link rel="stylesheet" href="{{ url('/fonts/bebas_neue.css') }}">
 <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ url('/images/favicon.ico') }}">
+<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 <style>
 /*
 Scollbar for webkit browsers
