@@ -33,7 +33,7 @@ Route::group([ 'prefix' => '/profile', ], function () {
     Route::post('/edit', 'ProfileController@postEdit');
 });
 
-Route::group([ 'prefix' => '/clan', ], function () {
+Route::group([ 'prefix' => '/c', ], function () {
     //Route::get('/', 'ClanController@index');
     Route::get('/create', 'ClanController@getCreate');
     Route::post('/create', 'ClanController@postCreate');
