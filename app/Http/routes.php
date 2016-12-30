@@ -37,4 +37,5 @@ Route::group([ 'prefix' => '/c', ], function () {
     //Route::get('/', 'ClanController@index');
     Route::get('/create', 'ClanController@getCreate');
     Route::post('/create', 'ClanController@postCreate');
+    Route::get('/{clan}', 'ClanController@getView');
 });

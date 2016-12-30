@@ -12,20 +12,22 @@ My Profile
             <h3>Clans</h3>
             
             @foreach ($profile->getClans() as $clan)
-            <div class="pure-g">
-                <div class="pure-u-xl-5-6 pure-u-1-1">
-                    <div class="egn-clan">
-                        <div class="egn-avatar">
-                            <img src="{{ url('/images/peak-100x100.png') }}" alt="clan_avatar">
-                        </div>
-                        <div class="egn-wrapper">
-                            <div class="egn-title">{{ $clan->name }}</div>
-                            <div class="egn-name">{{ $clan->generateDisplayName($profile) }}</div>
-                            <div class="egn-role">{{ ucfirst($clan->pivot->role) }}</div>
+            <a href="{{ action('ClanController@getView', compact('clan')) }}">
+                <div class="pure-g">
+                    <div class="pure-u-xl-5-6 pure-u-1-1">
+                        <div class="egn-clan">
+                            <div class="egn-avatar">
+                                <img src="{{ url('/images/peak-100x100.png') }}" alt="clan_avatar">
+                            </div>
+                            <div class="egn-wrapper">
+                                <div class="egn-title">{{ $clan->name }}</div>
+                                <div class="egn-name">{{ $clan->generateDisplayName($profile) }}</div>
+                                <div class="egn-role">{{ ucfirst($clan->pivot->role) }}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             @endforeach
     
             <p><a href="{{ action('ClanController@getCreate') }}">New Clan</a></p>

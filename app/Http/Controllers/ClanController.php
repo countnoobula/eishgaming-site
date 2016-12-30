@@ -8,6 +8,13 @@ use App\Models\Clan;
 
 final class ClanController extends Controller
 {
+    public function getView(Clan $clan)
+    {
+        $profile = $clan->getClan();
+        return view('clan.view')
+            ->with(compact('profile'));
+    }
+    
     public function getCreate()
     {
         return view('clan.create');

@@ -21,7 +21,7 @@
 
         <section id="content" class="content" data-uri="{{{ Request::path() == "/" ? "/" : "/" . Request::path() }}}">
             @yield('content')
-        </section>>
+        </section>
 
         @include('includes.foot')
     </body>
