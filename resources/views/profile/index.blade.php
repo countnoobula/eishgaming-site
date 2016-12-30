@@ -20,6 +20,7 @@ My Profile
                         </div>
                         <div class="egn-wrapper">
                             <div class="egn-title">{{ $clan->name }}</div>
+                            <div class="egn-name">{{ $clan->generateDisplayName($profile) }}</div>
                             <div class="egn-role">{{ ucfirst($clan->pivot->role) }}</div>
                         </div>
                     </div>
