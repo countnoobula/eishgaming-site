@@ -3,7 +3,6 @@
     <ul>
         <li><a href="{{ action('PageController@about', [], false) }}">About</a></li>
         <li><a href="{{ action('PageController@servers', [], false) }}">Game Servers</a></li>
-        <li><a href="{{ action('PageController@feed', [], false) }}">Group Feed</a></li>
         @if(auth()->check())
         <li><a href="{{ action('ProfileController@index', [], false) }}">My Profile</a></li>
         <li><a class="no-ajaxy" href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
