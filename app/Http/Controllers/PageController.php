@@ -22,4 +22,9 @@ final class PageController extends Controller
     {
         return view('pages.feed.landing');
     }
+    
+    public function servers()
+    {
+        return view('pages.servers');
+    }
 }

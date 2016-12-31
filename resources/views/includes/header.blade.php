@@ -2,6 +2,7 @@
     <a href="{{ action('PageController@index') }}" class="pure-menu-heading"><img src="{{ url('/images/EGN.png') }}" class="pure-img"></a>
     <ul>
         <li><a href="{{ action('PageController@about', [], false) }}">About</a></li>
+        <li><a href="{{ action('PageController@servers', [], false) }}">Game Servers</a></li>
         <li><a href="{{ action('PageController@feed', [], false) }}">Group Feed</a></li>
         @if(auth()->check())
         <li><a href="{{ action('ProfileController@index', [], false) }}">My Profile</a></li>

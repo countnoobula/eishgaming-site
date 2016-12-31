@@ -15,6 +15,8 @@ Route::get('/', 'PageController@index');
 
 Route::get('/about', 'PageController@about');
 
+Route::get('/servers', 'PageController@servers');
+
 Route::group([ 'prefix' => '/feed', ], function () {
     Route::get('/', 'PageController@feed');
 });
