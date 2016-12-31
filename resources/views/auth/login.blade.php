@@ -11,19 +11,19 @@ Login
         <p>
             Login using your e-mail and password (if you have them) otherwise use login with Facebook. New EGN account will be created if you do not have one.
         </p>
-        <form class="pure-form pure-form-aligned" method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
+        <form class="egn-form pure-form-aligned" method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
             @include ('messages')
             <fieldset>
                 <div class="pure-control-group">
-                    <label class="egn-label" for="email">Email Address</label>
-                    <input class="egn-input" id="email" type="email" name="email" required="required" value="{{ old('email') }}">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" name="email" required="required" value="{{ old('email') }}">
                 </div>
                 <div class="pure-control-group">
-                    <label class="egn-label" for="password">Password</label>
-                    <input class="egn-input" id="password" type="password" name="password" required="required">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" required="required">
                 </div>
                 <div class="pure-control-group">
-                    <label for="remember" class="pure-checkbox egn-label">
+                    <label for="remember" class="pure-checkbox">
                         <input id="remember" type="checkbox" name="remember" checked="checked"> Remember Me
                     </label>
 
