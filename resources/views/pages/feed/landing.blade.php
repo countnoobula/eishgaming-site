@@ -5,7 +5,7 @@ EGN Group Feed
 @stop
 
 @section('content')
-<div class="standard">
+<div class="wrapper">
     <div class="pure-g">
         <div class="pure-u-1">
             <h1>EGN Group Feed</h1>

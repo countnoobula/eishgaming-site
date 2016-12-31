@@ -6,11 +6,12 @@ My Profile
 
 @section('inner_content')
 
-<div class="standard">
+<div class="wrapper">
     <div class="pure-g">
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Clans</h3>
             
+            <div class="egn-clans">
             @foreach ($profile->getClans() as $clan)
             <a href="{{ action('ClanController@getView', compact('clan')) }}">
                 <div class="pure-g">
@@ -29,21 +30,27 @@ My Profile
                 </div>
             </a>
             @endforeach
+            </div>
     
             <p><a href="{{ action('ClanController@getCreate') }}">New Clan</a></p>
         </div>
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Games</h3>
+            
+            <div class="egn-games">
             <table>
                 <tr><td><img src="{{ url('/images/csgo.png') }}" /></td><td><p>539 hrs<br>210 games</o></td></tr>
                 <tr><td><img src="{{ url('/images/dota.png') }}" /></td><td><p>120 hrs<br>12 games</o></td></tr>
             </table>
+                </div>
         </div>
     </div>
     
     <div class="pure-g">
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Profile</h3>
+            
+            <div>
             <table class="egn-table">
                 <tbody>
                     <tr>
@@ -76,6 +83,7 @@ My Profile
                     </tr>
                 </tbody>
             </table>
+            </div>
             <p><a href="{{ action('ProfileController@getEdit') }}">Edit Profile</a></p>
         </div>
     </div>
