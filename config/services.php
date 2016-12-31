@@ -35,4 +35,7 @@ return [
         'secret' => '',
     ],
 
+    'google' => [
+        'id' => env('GA_ID'),
+    ],
 ];
