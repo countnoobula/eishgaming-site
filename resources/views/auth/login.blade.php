@@ -6,7 +6,7 @@ Login
 
 @section('content')
 <div class="pure-g standard">
-    <div class="pure-u-md-1-2 pure-u-sm-1 egn-standard-text-block">
+    <div class="pure-u-md-1-2 pure-u-sm-1 egn-block egn-block__pad">
         <h1>Login</h1>
         <p>
             Login using your e-mail and password (if you have them) otherwise use login with Facebook. New EGN account will be created if you do not have one.

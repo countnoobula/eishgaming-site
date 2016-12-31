@@ -12,7 +12,7 @@ EGN Group Feed
         </div>
     </div>
     <div class="pure-g">
-        <div class="pure-u-1 egn-standard-text-block" style="text-align: center">
+        <div class="pure-u-1 egn-block egn-block__pad" style="text-align: center">
             <h3>Coming Sooner!</h3>
         </div>
     </div>

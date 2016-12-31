@@ -7,7 +7,7 @@ Edit Profile
 
 @section('profile_content')
 <div class="pure-g standard">
-    <div class="pure-u-md-1-2 pure-u-sm-1 egn-standard-text-block">
+    <div class="pure-u-md-1-2 pure-u-sm-1 egn-block egn-block__pad">
         <h1>Edit Profile</h1>
         <form class="pure-form pure-form-aligned" method="POST" action="{{ action('ProfileController@postEdit') }}">
             @include ('messages')

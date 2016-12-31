@@ -7,7 +7,7 @@
 @section('inner_content')
 <div class="standard">
     <div class="pure-g">
-        <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
+        <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Members</h3>
             <ul class="egn-list">
             @foreach ($profile->getMembers() as $member)
@@ -19,7 +19,7 @@
             </ul>
         </div>
         
-        <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
+        <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Clan</h3>
             <table class="egn-table">
                 <tbody>

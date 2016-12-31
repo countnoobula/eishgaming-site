@@ -8,7 +8,7 @@ My Profile
 
 <div class="standard">
     <div class="pure-g">
-        <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
+        <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Clans</h3>
             
             @foreach ($profile->getClans() as $clan)
@@ -32,7 +32,7 @@ My Profile
     
             <p><a href="{{ action('ClanController@getCreate') }}">New Clan</a></p>
         </div>
-        <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
+        <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Games</h3>
             <table>
                 <tr><td><img src="{{ url('/images/csgo.png') }}" /></td><td><p>539 hrs<br>210 games</o></td></tr>
@@ -42,7 +42,7 @@ My Profile
     </div>
     
     <div class="pure-g">
-        <div class="pure-u-lg-1-2 pure-u-1-1 egn-standard-text-block">
+        <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Profile</h3>
             <table class="egn-table">
                 <tbody>

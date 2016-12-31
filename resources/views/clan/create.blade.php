@@ -7,7 +7,7 @@ New Clan
 
 @section('content')
 <div class="pure-g standard">
-    <div class="pure-u-md-1-2 pure-u-sm-1 egn-standard-text-block">
+    <div class="pure-u-md-1-2 pure-u-sm-1 egn-block egn-block__pad">
         <h1>New Clan</h1>
         <form class="egn-form pure-form-aligned" method="POST" action="{{ action('ClanController@postCreate') }}">
             @include ('messages')
