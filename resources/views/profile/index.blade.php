@@ -35,18 +35,26 @@ My Profile
     
             <p><a href="{{ action('ClanController@getCreate') }}">New Clan</a></p>
         </div>
-        @endcan
         
-        @can ('access.gaming')
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Games</h3>
             
             <div class="egn-games">
-            <table>
-                <tr><td><img src="{{ url('/images/csgo.png') }}" /></td><td><p>539 hrs<br>210 games</o></td></tr>
-                <tr><td><img src="{{ url('/images/dota.png') }}" /></td><td><p>120 hrs<br>12 games</o></td></tr>
-            </table>
-                </div>
+                <table>
+                    <tr><td><img src="{{ url('/images/csgo.png') }}" /></td><td><p>539 hrs<br>210 games</o></td></tr>
+                    <tr><td><img src="{{ url('/images/dota.png') }}" /></td><td><p>120 hrs<br>12 games</o></td></tr>
+                </table>
+            </div>
+        </div>
+        
+        @else
+        
+        <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
+            <h3>Connect Steam</h3>
+            
+            <div class="egn-thirdparty-signin">
+                <a href="#"><img src="{{ url('/images/sits_small.png') }}" alt="Sign in with steam" /></a>
+            </div>
         </div>
         @endcan
         
