@@ -5,7 +5,9 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "laravelcollective/html": "^5.1@dev"
+        "laravelcollective/html": "^5.1@dev",
+        "laravel/socialite": "^2.0",
+        "socialiteproviders/steam": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
