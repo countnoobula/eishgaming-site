@@ -5,6 +5,7 @@ Eish Gaming Network
 @stop
 
 @section('content')
+@include ("includes/alert")
 <div class="wrapper">
     <div class="pure-g">
         <div class="pure-u-1">

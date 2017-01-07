@@ -41,3 +41,10 @@ Route::group([ 'prefix' => '/c', ], function () {
     Route::post('/create', 'ClanController@postCreate');
     Route::get('/{clan}', 'ClanController@getView');
 });
+
+Route::group([ 'prefix' => '/thirdparty', 'namespace' => 'Thirdparty', ], function () {
+    Route::group([ 'prefix' => '/facebook' ], function () {
+        Route::get('/auth', 'Facebook@getAuthenticate');
+        Route::get('/', 'Facebook@index');
+    });
+});

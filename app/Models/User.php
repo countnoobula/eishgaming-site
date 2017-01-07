@@ -38,6 +38,9 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'is_admin',
         'is_gaming',
         'is_profile',
+        'facebook_id',
+        'steam_id',
+        'steam_community_id',
     ];
 
     /**
