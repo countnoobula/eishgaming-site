@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,9 +12,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(GateContract $gate)
     {
-        //
+        $gate->define('access.gaming', function ($user) {
+            return $user->is_gaming;
+        });
+        
+        $gate->define('access.profile', function ($user) {
+            return $user->is_profile;
+        });
     }
 
     /**

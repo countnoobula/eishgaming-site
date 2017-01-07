@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use App\Interfaces\Profile;
 use Carbon\Carbon;
 use Traversable;
 
-class User extends BaseModel implements AuthenticatableContract, CanResetPasswordContract
+class User extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, Authorizable, CanResetPassword;
 
     /**
      * The database table used by the model.
@@ -26,7 +28,17 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'display_name', 'birthday', 'phone',];
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'display_name',
+        'birthday',
+        'phone',
+        'is_admin',
+        'is_gaming',
+        'is_profile',
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -35,6 +47,12 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      */
     protected $hidden = ['password', 'remember_token'];
     
+    protected $casts = [
+        'is_admin' => 'boolean',
+        'is_gaming' => 'boolean',
+        'is_profile' => 'boolean',
+    ];
+
     protected $dates = [
         'created_at',
         'updated_at',

@@ -8,6 +8,7 @@ My Profile
 
 <div class="wrapper">
     <div class="pure-g">
+        @can ('access.gaming')
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Clans</h3>
             
@@ -34,6 +35,9 @@ My Profile
     
             <p><a href="{{ action('ClanController@getCreate') }}">New Clan</a></p>
         </div>
+        @endcan
+        
+        @can ('access.gaming')
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Games</h3>
             
@@ -44,9 +48,11 @@ My Profile
             </table>
                 </div>
         </div>
+        @endcan
     </div>
     
     <div class="pure-g">
+        @can ('access.profile')
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Profile</h3>
             
@@ -86,6 +92,7 @@ My Profile
             </div>
             <p><a href="{{ action('ProfileController@getEdit') }}">Edit Profile</a></p>
         </div>
+        @endcan
     </div>
 </div>
 @stop
