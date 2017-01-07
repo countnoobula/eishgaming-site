@@ -49,9 +49,7 @@ My Profile
                 </div>
         </div>
         @endcan
-    </div>
-    
-    <div class="pure-g">
+        
         @can ('access.profile')
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Profile</h3>
