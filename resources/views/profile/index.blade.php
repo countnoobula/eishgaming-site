@@ -47,16 +47,17 @@ My Profile
             </div>
         </div>
         
-        @else
+        @endcan
         
+        @if (is_null(data_get(auth()->user(), 'steam_community_id')))
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">
             <h3>Connect Steam</h3>
             
             <div class="egn-thirdparty-signin">
-                <a href="#"><img src="{{ url('/images/sits_small.png') }}" alt="Sign in with steam" /></a>
+                <a class="no-ajaxy" href="{{ action('Thirdparty\Steam@index') }}"><img src="{{ url('/images/sits_small.png') }}" alt="Sign in with steam" /></a>
             </div>
         </div>
-        @endcan
+        @endif
         
         @can ('access.profile')
         <div class="pure-u-lg-1-2 pure-u-1-1 egn-block egn-block__pad">

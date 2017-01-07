@@ -16,6 +16,7 @@ class AddSocialIdsUsers extends Migration
             $table->string('facebook_id')->nullable();
             $table->string('steam_id')->nullable();
             $table->string('steam_community_id')->nullable();
+            $table->string('steam_primary_clan')->nullable();
             
             $table->index('facebook_id');
             $table->index('steam_id');

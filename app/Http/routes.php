@@ -47,4 +47,9 @@ Route::group([ 'prefix' => '/thirdparty', 'namespace' => 'Thirdparty', ], functi
         Route::get('/auth', 'Facebook@getAuthenticate');
         Route::get('/', 'Facebook@index');
     });
+    
+    Route::group([ 'prefix' => '/steam' ], function () {
+        Route::get('/auth', 'Steam@getAuthenticate');
+        Route::get('/', 'Steam@index');
+    });
 });

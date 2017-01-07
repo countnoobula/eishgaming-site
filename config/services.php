@@ -44,4 +44,10 @@ return [
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
         'redirect' => env('FACEBOOK_REDIRECT'),
     ],
+
+    'steam' => [
+        'client_id' => null,
+        'client_secret' => env('STEAM_KEY'),
+        'redirect' => env('STEAM_REDIRECT_URI'),  
+    ], 
 ];

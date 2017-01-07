@@ -41,6 +41,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'facebook_id',
         'steam_id',
         'steam_community_id',
+        'steam_primary_clan',
     ];
 
     /**
