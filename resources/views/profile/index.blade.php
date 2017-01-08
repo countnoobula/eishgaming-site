@@ -15,18 +15,14 @@ My Profile
             <div class="egn-clans">
             @foreach ($profile->getClans() as $clan)
             <a href="{{ action('ClanController@getView', compact('clan')) }}">
-                <div class="pure-g">
-                    <div class="pure-u-xl-5-6 pure-u-1-1">
-                        <div class="egn-clan">
-                            <div class="egn-avatar">
-                                <img src="{{ url('/images/peak-100x100.png') }}" alt="clan_avatar">
-                            </div>
-                            <div class="egn-wrapper">
-                                <div class="egn-title">{{ $clan->name }}</div>
-                                <div class="egn-name">{{ $clan->generateDisplayName($profile) }}</div>
-                                <div class="egn-role">{{ ucfirst($clan->pivot->role) }}</div>
-                            </div>
-                        </div>
+                <div class="egn-clan">
+                    <div class="egn-avatar">
+                        <img src="{{ url('/images/peak-100x100.png') }}" alt="clan_avatar">
+                    </div>
+                    <div class="egn-wrapper">
+                        <div class="egn-title">{{ $clan->name }}</div>
+                        <div class="egn-name">{{ $clan->generateDisplayName($profile) }}</div>
+                        <div class="egn-role">{{ ucfirst($clan->pivot->role) }}</div>
                     </div>
                 </div>
             </a>
@@ -41,17 +37,13 @@ My Profile
             
             <div class="egn-games">
             @foreach ($profile->getGames() as $game)
-            <div class="pure-g">
-                <div class="pure-u-xl-5-6 pure-u-1-1">
-                    <div class="egn-game">
-                        <div class="egn-icon">
-                            <div class="egn-helper"></div>
-                            <img src="{{ url('/images/'.strtolower($game->game).'.png') }}" alt="{{ $game->game }}">
-                        </div>
-                        <div class="egn-wrapper">
-                            <div class="egn-stat">{{ k($game->rounds_played) }} games / {{ k($game->minutes_played > 0?($game->minutes_played / 60):0) }} hrs</div>
-                        </div>
-                    </div>
+            <div class="egn-game">
+                <div class="egn-icon">
+                    <div class="egn-helper"></div>
+                    <img src="{{ url('/images/'.strtolower($game->game).'.png') }}" alt="{{ $game->game }}">
+                </div>
+                <div class="egn-wrapper">
+                    <div class="egn-stat">{{ k($game->rounds_played) }} games / {{ k($game->minutes_played > 0?($game->minutes_played / 60):0) }} hrs</div>
                 </div>
             </div>
             @endforeach
