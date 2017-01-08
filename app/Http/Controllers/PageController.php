@@ -8,6 +8,7 @@ final class PageController extends Controller
 {
     public function index()
     {
+        throw new \Exception("TESTING");
         $articles = Article::orderBy('created_at', 'desc')->paginate(4);
         return view('pages.index')
             ->with([ 'newsArticles' => $articles ]);

@@ -15,6 +15,8 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         \Symfony\Component\HttpKernel\Exception\HttpException::class,
     ];
+    
+    private $sentryID;
 
     /**
      * Report or log an exception.
@@ -26,7 +28,11 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        return parent::report($e);
+        if (!is_null(config('sentry.dsn')) && $this->shouldReport($e)) {
+            $this->sentryID = app('sentry')->captureException($e);
+        }
+        
+        parent::report($e);
     }
 
     /**
@@ -38,6 +44,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        return parent::render($request, $e);
+        if (config('app.debug')) {
+            return parent::render($request, $e);
+        }
+        
+        return response()->view('errors.500', [
+            'sentryID' => $this->sentryID,
+        ], 500);
     }
 }
