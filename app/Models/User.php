@@ -122,4 +122,9 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
     {
         return $this->belongsToMany(Clan::class)->withPivot('role')->withTimestamps();
     }
+    
+    public function gameActivities()
+    {
+        return $this->hasMany(GameUserActivity::class);
+    }
 }
