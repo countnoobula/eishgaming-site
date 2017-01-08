@@ -22,7 +22,6 @@ final class Steam extends Controller
     
     public function index()
     {
-        $this->updateUserGames(auth()->user());
         return Socialite::with('steam')->redirect();
     }
     
