@@ -123,7 +123,7 @@ final class Steam extends Controller
             $activity->minutes_played = round($secs / 60);
         }
         
-        $activity->rounds_played = data_get($stats->get('total_matches_won', []), 'value');
+        $activity->rounds_played = data_get($stats->get('total_matches_played', []), 'value');
         
         $activity->save();
     }
