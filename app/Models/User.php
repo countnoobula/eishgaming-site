@@ -115,6 +115,11 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
             {
                 return $this->user->clans;
             }
+            
+            public function getGames(): Traversable
+            {
+                return $this->user->gameActivities;
+            }
         };
     }
     

@@ -41,8 +41,9 @@ My Profile
             
             <div class="egn-games">
                 <table>
-                    <tr><td><img src="{{ url('/images/csgo.png') }}" /></td><td><p>539 hrs<br>210 games</o></td></tr>
-                    <tr><td><img src="{{ url('/images/dota.png') }}" /></td><td><p>120 hrs<br>12 games</o></td></tr>
+                    @foreach ($profile->getGames() as $game)
+                    <tr><td><img src="{{ url('/images/'.strtolower($game->game).'.png') }}" /></td><td><p>{{ ($game->minutes_played > 0?round($game->minutes_played / 60):0) }} hrs<br>{{ $game->rounds_played }} games</o></td></tr>
+                    @endforeach
                 </table>
             </div>
         </div>

@@ -13,4 +13,5 @@ interface Profile extends Banner
     public function getPhoneNumber(): string;
     public function getStatusLabel(): string;
     public function getClans(): Traversable;
+    public function getGames(): Traversable;
 }
