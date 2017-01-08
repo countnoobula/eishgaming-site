@@ -40,11 +40,21 @@ My Profile
             <h3>Games</h3>
             
             <div class="egn-games">
-                <table>
-                    @foreach ($profile->getGames() as $game)
-                    <tr><td><img src="{{ url('/images/'.strtolower($game->game).'.png') }}" /></td><td><p>{{ ($game->minutes_played > 0?round($game->minutes_played / 60):0) }} hrs<br>{{ $game->rounds_played }} games</o></td></tr>
-                    @endforeach
-                </table>
+            @foreach ($profile->getGames() as $game)
+            <div class="pure-g">
+                <div class="pure-u-xl-5-6 pure-u-1-1">
+                    <div class="egn-game">
+                        <div class="egn-icon">
+                            <div class="egn-helper"></div>
+                            <img src="{{ url('/images/'.strtolower($game->game).'.png') }}" alt="{{ $game->game }}">
+                        </div>
+                        <div class="egn-wrapper">
+                            <div class="egn-stat">{{ $game->rounds_played }} games / {{ ($game->minutes_played > 0?round($game->minutes_played / 60):0) }} hrs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
             </div>
         </div>
         
