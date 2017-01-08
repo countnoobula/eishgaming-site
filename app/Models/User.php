@@ -108,6 +108,18 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
 
             public function getStatusLabel(): string
             {
+                if ($this->user->is_admin) {
+                    return 'Verified Admin';
+                }
+                
+                if ($this->user->is_gaming) {
+                    return 'Verified Gamer';
+                }
+                
+                if ($this->user->is_profile) {
+                    return 'Verified User';
+                }
+                
                 return 'Unverified User';
             }
             
