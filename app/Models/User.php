@@ -132,6 +132,15 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
             {
                 return $this->user->gameActivities;
             }
+            
+            public function inviteUrl(): string
+            {
+                if (auth()->user()->id == $this->user->id) {
+                    return '';
+                }
+                
+                return '/';
+            }
         };
     }
     

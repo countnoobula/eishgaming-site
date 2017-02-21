@@ -35,6 +35,10 @@ Route::group([ 'prefix' => '/profile', ], function () {
     Route::post('/edit', 'ProfileController@postEdit');
 });
 
+Route::model('user', '\App\Models\User');
+
+Route::get('/p/{user}', 'ProfileController@user');
+
 Route::group([ 'prefix' => '/c', ], function () {
     //Route::get('/', 'ClanController@index');
     Route::get('/create', 'ClanController@getCreate');

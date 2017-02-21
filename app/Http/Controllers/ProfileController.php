@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Models\User;
 
 final class ProfileController extends Controller 
 {
@@ -16,6 +17,13 @@ final class ProfileController extends Controller
     {
         $profile = auth()->user()->getProfile();
         return view('profile.index')
+            ->with(compact('profile'));
+    }
+    
+    public function user(User $user)
+    {
+        $profile = $user->getProfile();
+        return view('profile.user')
             ->with(compact('profile'));
     }
     
