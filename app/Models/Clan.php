@@ -65,6 +65,11 @@ class Clan extends BaseModel
             {
                 return $this->clan->generateDisplayName($u->getProfile()->getDisplayName());
             }
+            
+            public function inviteUrl(): string
+            {
+                return '';
+            }
         };
     }
 }

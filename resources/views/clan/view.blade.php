@@ -11,14 +11,9 @@
             <h3>Members</h3>
             
             <div class="egn-members">
-                <ul class="egn-list">
                 @foreach ($profile->getMembers() as $member)
-                    <li>
-                        <div class="egn-title">{{ $profile->getMemberDisplayName($member) }}</div>
-                        <div class="egn-role">{{ ucfirst($member->pivot->role) }}</div>
-                    </li>
+                    @include ('objects.member', [$member, $profile])
                 @endforeach
-                </ul>
             </div>
         </div>
         
