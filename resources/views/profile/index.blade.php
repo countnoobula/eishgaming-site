@@ -1,8 +1,4 @@
-@extends('layouts.banner')
-
-@section('title')
-My Profile
-@stop
+@extends('layouts.banner', ['title' => 'My Profile',])
 
 @section('inner_content')
 

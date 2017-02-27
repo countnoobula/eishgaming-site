@@ -1,8 +1,4 @@
-@extends('layouts.default')
-
-@section('title')
-Eish Gaming Network
-@stop
+@extends('layouts.default', ['title' => 'Eish Gaming Network',])
 
 @section('content')
 @include ("includes/alert")

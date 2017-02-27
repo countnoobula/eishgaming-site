@@ -1,8 +1,4 @@
-@extends('layouts.default')
-
-@section('title')
-Login
-@stop
+@extends('layouts.default', ['title' => 'Login',])
 
 @section('content')
 <div class="wrapper">

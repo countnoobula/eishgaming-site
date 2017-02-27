@@ -1,9 +1,5 @@
 
-@extends('layouts.banner')
-
-@section('title')
-Edit Profile
-@stop
+@extends('layouts.banner', ['title' => 'Edit Profile',])
 
 @section('inner_content')
 <div class="wrapper">

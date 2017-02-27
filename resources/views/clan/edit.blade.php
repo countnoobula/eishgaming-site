@@ -1,9 +1,5 @@
 
-@extends('layouts.profile')
-
-@section('title')
-Edit Profile
-@stop
+@extends('layouts.profile', ['title' => 'Edit Profile',])
 
 @section('profile_content')
 <div class="wrapper">

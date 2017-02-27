@@ -1,9 +1,5 @@
 
-@extends('layouts.default')
-
-@section('title')
-New Clan
-@stop
+@extends('layouts.default', ['title' => 'New Clan',])
 
 @section('content')
 <div class="wrapper">

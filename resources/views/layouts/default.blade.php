@@ -1,6 +1,6 @@
 @if (Request::ajax())
     <section id="content" data-uri="{{{ Request::path() == "/" ? "/" : "/" . Request::path() }}}" style="display: none;">
-        <div class="document-title" style="display:none;">EGN - @yield('title')</div>
+        <div class="document-title" style="display:none;">EGN - {{ $title }}</div>
         
         @yield('content')
     </section>

@@ -1,8 +1,4 @@
-@extends('layouts.default')
-
-@section('title')
-Game Servers
-@stop
+@extends('layouts.default', ['title' => 'Game Servers',])
 
 @section('content')
 <div class="wrapper">

@@ -1,8 +1,4 @@
-@extends('layouts.default')
-
-@section('title')
-EGN Group Feed
-@stop
+@extends('layouts.default', ['title' => 'EGN Group Feed',])
 
 @section('content')
 <div class="wrapper">

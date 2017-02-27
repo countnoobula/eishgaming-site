@@ -1,4 +1,4 @@
-<title>EGN - @yield('title')</title>
+<title>EGN - {{ $title }}</title>
 <meta name="author" content="Dylan Vorster">
 <meta name="author" content="Shaun van Tonder">
 <meta name="author" content="Rory van Heerden">

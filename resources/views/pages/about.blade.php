@@ -1,8 +1,4 @@
-@extends('layouts.default')
-
-@section('title')
-About EGN
-@stop
+@extends('layouts.default', ['title' => 'About EGN',])
 
 @section('content')
 <div class="wrapper">

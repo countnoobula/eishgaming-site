@@ -1,8 +1,4 @@
-@extends('layouts.banner')
-
-@section('title')
-{{ $profile->getDisplayName() }}
-@stop
+@extends('layouts.banner', ['title' => $profile->getDisplayName(),])
 
 @section('inner_content')
 <div class="wrapper">
