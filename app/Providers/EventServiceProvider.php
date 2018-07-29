@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Thirdparty\SteamActivities;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -28,6 +31,16 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot($events);
 
-        //
+        $events->listen('auth.login', function ($user, $remember) {
+            if ($user instanceof User && !is_null($user->steam_community_id)) {
+                $activties = $user->gameActivities()
+                    ->whereIn('game', [ 'DOTA', 'CSGO'])
+                    ->where('updated_at', '>=', Carbon::now()->subWeek())
+                    ->count();
+                if (!$activties) {
+                    SteamActivities::updateUserGames($user);
+                }
+            }
+        });
     }
 }
