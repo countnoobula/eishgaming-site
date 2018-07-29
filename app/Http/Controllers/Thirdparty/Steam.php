@@ -112,9 +112,13 @@ final class Steam extends Controller
             'key' => $this->key,
             'steamid' => $user->steam_community_id,
         ];
-        
-        $getStats = $client->get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/', compact('query'));
-        $response = json_decode($getStats->getBody(), true);
+
+        try {
+            $getStats = $client->get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/', compact('query'));
+            $response = json_decode($getStats->getBody(), true);
+        } catch (ServerException $ex) {
+            $response = [];
+        }
         
         $stats = collect(data_get($response, 'playerstats.stats', []))->keyBy('name');
         
@@ -135,9 +139,13 @@ final class Steam extends Controller
             'key' => $this->key,
             'matches_requested' => 0,
         ];
-        
-        $getStats = $client->get("http://api.steampowered.com/IDOTA2Match_".self::DOTA."/GetMatchHistory/v1", compact('query'));
-        $response = json_decode($getStats->getBody(), true);
+
+        try {
+            $getStats = $client->get("http://api.steampowered.com/IDOTA2Match_" . self::DOTA . "/GetMatchHistory/v1", compact('query'));
+            $response = json_decode($getStats->getBody(), true);
+        } catch (ServerException $ex) {
+            $response = [];
+        }
         
         if (data_get($response, 'result.status') !== 1) {
             return;

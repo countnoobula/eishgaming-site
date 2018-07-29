@@ -143,6 +143,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
