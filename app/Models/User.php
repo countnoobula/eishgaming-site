@@ -12,6 +12,83 @@ use App\Interfaces\Profile;
 use Carbon\Carbon;
 use Traversable;
 
+class UserProfile implements Profile {
+    private $user;
+
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    public function getDisplayName()
+    {
+        if (!empty(trim("{$this->user->display_name}"))) {
+            return $this->user->display_name;
+        }
+        return $this->user->name;
+    }
+
+    public function getBirthday()
+    {
+        if (is_null($this->user->birthday)) {
+            return Carbon::now();
+        }
+
+        return $this->user->birthday;
+    }
+
+    public function getEmail()
+    {
+        return $this->user->email;
+    }
+
+    public function getName()
+    {
+        return $this->user->name;
+    }
+
+    public function getPhoneNumber()
+    {
+        return "{$this->user->phone}";
+    }
+
+    public function getStatusLabel()
+    {
+        if ($this->user->is_admin) {
+            return 'Verified Admin';
+        }
+
+        if ($this->user->is_gaming) {
+            return 'Verified Gamer';
+        }
+
+        if ($this->user->is_profile) {
+            return 'Verified User';
+        }
+
+        return 'Unverified User';
+    }
+
+    public function getClans()
+    {
+        return $this->user->clans;
+    }
+
+    public function getGames()
+    {
+        return $this->user->gameActivities;
+    }
+
+    public function inviteUrl()
+    {
+        if (auth()->user()->id == $this->user->id) {
+            return '';
+        }
+
+        return '/';
+    }
+}
+
 class User extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
@@ -64,84 +141,9 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'birthday',
     ];
 
-    public function getProfile(): Profile
+    public function getProfile()
     {
-        return new class($this) implements Profile {
-            private $user;
-            
-            public function __construct(User $user)
-            {
-                $this->user = $user;
-            }
-            
-            public function getDisplayName(): string
-            {
-                if (!empty(trim("{$this->user->display_name}"))) {
-                    return $this->user->display_name;
-                }
-                return $this->user->name;
-            }
-
-            public function getBirthday(): Carbon
-            {
-                if (is_null($this->user->birthday)) {
-                    return Carbon::now();
-                }
-                
-                return $this->user->birthday;
-            }
-
-            public function getEmail(): string
-            {
-                return $this->user->email;
-            }
-
-            public function getName(): string
-            {
-                return $this->user->name;
-            }
-
-            public function getPhoneNumber(): string
-            {
-                return "{$this->user->phone}";
-            }
-
-            public function getStatusLabel(): string
-            {
-                if ($this->user->is_admin) {
-                    return 'Verified Admin';
-                }
-                
-                if ($this->user->is_gaming) {
-                    return 'Verified Gamer';
-                }
-                
-                if ($this->user->is_profile) {
-                    return 'Verified User';
-                }
-                
-                return 'Unverified User';
-            }
-            
-            public function getClans(): Traversable
-            {
-                return $this->user->clans;
-            }
-            
-            public function getGames(): Traversable
-            {
-                return $this->user->gameActivities;
-            }
-            
-            public function inviteUrl(): string
-            {
-                if (auth()->user()->id == $this->user->id) {
-                    return '';
-                }
-                
-                return '/';
-            }
-        };
+        return new UserProfile($this);
     }
     
     public function clans()

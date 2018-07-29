@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Thirdparty;
 
 use App\Http\Controllers\Controller;
+use GuzzleHttp\Exception\ServerException;
 use Socialite;
 use App\Models\User;
 use App\Models\GameUserActivity;
@@ -52,7 +53,7 @@ final class Steam extends Controller
             ->action('ProfileController@index');
     }
     
-    private function canSteamUpdateUser($steam): bool
+    private function canSteamUpdateUser($steam)
     {
         $user = User::find(['steam_community_id' => $steam->id,])->first();
         
@@ -64,7 +65,7 @@ final class Steam extends Controller
         return ($user->id != auth()->user()->id);
     }
     
-    private function calculateSteamID($communityid): string
+    private function calculateSteamID($communityid)
     {
         $authserver = bcsub($communityid, '76561197960265728') & 1;
         $authid = (bcsub($communityid, '76561197960265728') - $authserver) / 2;

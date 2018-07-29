@@ -8,7 +8,7 @@ use App\Models\User;
 
 interface Clan extends Banner
 {
-    public function getEstablishedDate(): Carbon;
-    public function getMembers(): Traversable;
-    public function getMemberDisplayName(User $u): string;
+    public function getEstablishedDate();
+    public function getMembers();
+    public function getMemberDisplayName(User $u);
 }

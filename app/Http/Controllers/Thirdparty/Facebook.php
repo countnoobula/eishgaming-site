@@ -24,7 +24,7 @@ final class Facebook extends Controller
             ->action('ProfileController@index');
     }
     
-    private function authenticate(): bool
+    private function authenticate()
     {
         $user = Socialite::with('facebook')->user();
         
@@ -44,7 +44,7 @@ final class Facebook extends Controller
         return true;
     }
     
-    private function lookupUser($fb): User
+    private function lookupUser($fb)
     {
         //$user = User::withTrashed()->findOrNew(['facebook_id' => $fb->id,]);
         $user = User::firstOrNew(['facebook_id' => $fb->id,]);

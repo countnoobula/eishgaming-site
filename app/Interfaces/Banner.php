@@ -4,6 +4,6 @@ namespace App\Interfaces;
 
 interface Banner
 {
-    public function getDisplayName(): string;
-    public function inviteUrl(): string;
+    public function getDisplayName();
+    public function inviteUrl();
 }
