@@ -26,6 +26,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
+        $gate->define('test-beta-features', function ($user) {
+            return $user->steam_primary_clan == '103582791430703219';
+        });
     }
 }

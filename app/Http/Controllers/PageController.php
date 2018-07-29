@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Http\Request;
 
 final class PageController extends Controller 
 {
@@ -23,8 +24,12 @@ final class PageController extends Controller
         return view('pages.feed.landing');
     }
     
-    public function servers()
+    public function servers(Request $request)
     {
+        if ($request->user()->cannot('test-beta-features')) {
+            abort(403);
+        }
+
         return view('pages.servers');
     }
 }
