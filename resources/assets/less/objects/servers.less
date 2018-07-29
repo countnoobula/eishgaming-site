@@ -4,38 +4,108 @@
 */
 
 .egn-servers {
-    overflow: hidden;
-    width: 100%;
+    //overflow: hidden;
+    //width: 100%;
     //min-width: 750px;
-    height: 100px;
+    //height: 400px;
     cursor: pointer;
     white-space: nowrap;
 
-    .egn-game-icon {
-        overflow: hidden;
-        display: inline-block;
-        float: left;
-        width: 100px;
-        margin-right: 1em;
-
-        img {
-            width: 100px;
-            height: 100px;
-            padding: 0;
+    .egn-server {
+        h3 {
+            background-color: rgba(0, 0, 0, 0.40);
+            padding: 10px;
+            padding-left: 5px;
         }
-    }
 
-    .egn-wrapper {
-        overflow: hidden;
-        display: inline-block;
-        width: 560px;
-
-        .egn-tracker {
-            width: 450px;
-            height: 90px;
-            background-image: url('http://cache.www.gametracker.com/server_info/197.84.209.49:27015/b_560_95_1.png');
+        &__hl1 {
+            background-image: url('/images/games/half-life.jpg');
             background-repeat: no-repeat;
-            background-position: right center;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__hl1of {
+            background-image: url('/images/games/hl1of.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__cscz {
+            background-image: url('/images/games/cscz.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__hl1dms {
+            background-image: url('/images/games/half-life-deathmatch.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__svencoop {
+            background-image: url('/images/games/svencoop.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__cstrike {
+            background-image: url('/images/games/cstrike.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__quake3arena {
+            background-image: url('/images/games/quake3arena.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        &__minecraft {
+            background-image: url('/images/games/minecraft.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        &__hl2dm {
+            background-image: url('/images/games/hl2dm.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+
+        .egn-space {
+            height: 150px;
+            width: 100%;
+        }
+
+        .egn-controls {
+            text-align: right;
+            padding-bottom: 10px;
+            a.egn-button {
+                background-color: #95b91a; background-image: -webkit-gradient(linear, left top, left bottom, from(#95b91a), to(#8bb41d));
+                background-image: linear-gradient(to bottom, #95b91a, #8bb41d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#95b91a, endColorstr=#8bb41d);
+                padding: 10px;
+                font-size: 14px;
+            }
+            a.egn-button:hover {
+                background-color: #b6e026; background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e026), to(#abdc28));
+                background-image: linear-gradient(to bottom, #b6e026, #abdc28);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#b6e026, endColorstr=#abdc28);
+            }
+            a.cost {
+                background-color: rgba(0,0,0,0.7);
+                padding: 11px;
+                padding-top: 10px;
+                margin-right: -5px;
+                font-size: 14px;
+            }
         }
     }
 }
